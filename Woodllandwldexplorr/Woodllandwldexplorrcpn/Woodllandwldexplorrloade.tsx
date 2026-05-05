@@ -1,4 +1,10 @@
-import {ImageBackground, ScrollView, StyleSheet, View} from 'react-native';
+import {
+  ImageBackground,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
 
 import React, {useEffect} from 'react';
 
@@ -128,9 +134,7 @@ const Woodllandwldexplorrloade = () => {
 
   useEffect(() => {
     const wodllandwldexplorrTimer = setTimeout(() => {
-      wodllandwldexplorrNavigation.navigate(
-        'Woodllandwldexplorronbr' as never,
-      );
+      wodllandwldexplorrNavigation.navigate('Woodllandwldexplorronbr' as never);
     }, 6000);
 
     return () => {
@@ -140,7 +144,11 @@ const Woodllandwldexplorrloade = () => {
 
   return (
     <ImageBackground
-      source={require('../../assets/imgs/wodllandwldexploloade.png')}
+      source={
+        Platform.OS === 'ios'
+          ? require('../../assets/imgs/wodllandwldexploloade.png')
+          : require('../../assets/imgs/wodllandwlprivbgand.png')
+      }
       style={styles.wodllandwldexplorrimageBg}>
       <ScrollView
         contentContainerStyle={styles.wodllandwldexplorrscrollContent}

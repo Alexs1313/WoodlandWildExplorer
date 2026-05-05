@@ -6,6 +6,7 @@ import React, {useMemo, useState} from 'react';
 import {
   FlatList,
   Image,
+  Platform,
   Pressable,
   StyleSheet,
   Text,
@@ -68,7 +69,9 @@ const Woodllandwldexplorrmain = () => {
             </Text>
           </View>
 
-          <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+          {Platform.OS === 'ios' && (
+            <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+          )}
         </View>
 
         <View style={styles.wodllandwldexplorrSearchWrap}>

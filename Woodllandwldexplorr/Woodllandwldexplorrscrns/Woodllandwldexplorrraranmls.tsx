@@ -4,7 +4,15 @@ import Woodllandwldexplorrsettmenu from '../Woodllandwldexplorrcpn/Woodllandwlde
 import {wodllandwldexplorrRaraItems} from '../Woodllandwldexplorrdata/Woodllandwldexplorrraradata';
 
 import React, {useMemo, useState} from 'react';
-import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  Platform,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const Woodllandwldexplorrraranmls = () => {
@@ -48,7 +56,9 @@ const Woodllandwldexplorrraranmls = () => {
             </View>
           </View>
 
-          <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+          {Platform.OS === 'ios' && (
+            <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+          )}
         </View>
 
         <View style={styles.wodllandwldexplorrTabs}>

@@ -7,7 +7,7 @@ import Orientation from 'react-native-orientation-locker';
 
 import React, {useCallback, useMemo, useState} from 'react';
 
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, Platform, Pressable, StyleSheet, Text, View} from 'react-native';
 
 import MapView, {Marker} from 'react-native-maps';
 
@@ -74,7 +74,9 @@ const Woodllandwldexplorrmap = () => {
             </Text>
           </View>
 
-          <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+          {Platform.OS === 'ios' && (
+            <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+          )}
         </View>
 
         <View style={styles.wodllandwldexplorrMapWrap}>

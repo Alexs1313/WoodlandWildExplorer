@@ -1,7 +1,7 @@
 import Woodllandwldexplorrlay from '../Woodllandwldexplorrcpn/Woodllandwldexplorrlay';
 
 import React, {useMemo, useState} from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Platform, Pressable, StyleSheet, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import Woodllandwldexplorrsettmenu from '../Woodllandwldexplorrcpn/Woodllandwldexplorrsettmenu';
@@ -76,7 +76,9 @@ const Woodllandwldexplorrminigmenu = () => {
             </Text>
           </View>
 
-          <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+          {Platform.OS === 'ios' && (
+            <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+          )}
         </View>
 
         {wodllandwldexplorrPick(
