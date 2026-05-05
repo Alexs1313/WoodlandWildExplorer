@@ -1,4 +1,4 @@
-package com.woodlandwildexplorer
+package com.wilds.woodland.explorer
 
 import android.app.Application
 import com.facebook.react.PackageList

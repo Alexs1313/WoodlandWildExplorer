@@ -12,122 +12,142 @@ import {useNavigation} from '@react-navigation/native';
 import WebView from 'react-native-webview';
 
 const wodllandwldexplorrhtmlloader = `<!DOCTYPE html>
-    <html>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-          html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-          }
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-          body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-          .sun {
-            position: relative;
-            animation: rotate 4s linear infinite;
-            --color: yellow;
-            --scale: 0.4;
-          }
+  .tree {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    animation: treeAnimate 5s linear infinite;
+  }
 
-          .center {
-            height: calc(var(--scale) * 10em);
-            width: calc(var(--scale) * 10em);
-            background-color: var(--color);
-            border-radius: 50%;
-            box-shadow: 0 0 calc(var(--scale) * 3em) var(--color);
-          }
+  @keyframes treeAnimate {
+    0% {
+      transform: rotateX(-20deg) rotateY(360deg);
+    }
+    100% {
+      transform: rotateX(-20deg) rotateY(0deg);
+    }
+  }
 
-          .ray {
-            position: absolute;
-            height: calc(var(--scale) * 3em);
-            width: calc(var(--scale) * 0.5em);
-            box-shadow: 0 0 calc(var(--scale) * 1em) var(--color);
-            background-color: var(--color);
-          }
+  .tree .branch,
+  .tree .stem {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
 
-          .r-1 {
-            margin-left: calc(var(--scale) * 4.75em);
-            margin-top: calc(var(--scale) * 1em);
-          }
+  .branch {
+    transform: translateY(calc(25px * var(--x)));
+  }
 
-          .r-2 {
-            margin-left: calc(var(--scale) * 12.25em);
-            margin-top: calc(var(--scale) * -6.25em);
-            transform: rotate(90deg);
-          }
+  .branch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #69c069, #77dd77);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-bottom: 5px solid rgba(0,0,0,0.1);
+    transform-origin: bottom;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(28.5px);
+  }
 
-          .r-3 {
-            margin-left: calc(var(--scale) * 4.75em);
-            margin-top: calc(var(--scale) * -14em);
-          }
+  .stem span {
+    position: absolute;
+    top: 110px;
+    left: calc(50% - 7.5px);
+    width: 15px;
+    height: 50%;
+    background: linear-gradient(90deg, #bb4622, #df7214);
+    border-bottom: 5px solid rgba(0,0,0,0.1);
+    transform-origin: bottom;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(7.5px);
+  }
 
-          .r-4 {
-            margin-left: calc(var(--scale) * -2.75em);
-            margin-top: calc(var(--scale) * -6.25em);
-            transform: rotate(90deg);
-          }
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    filter: blur(20px);
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(-65px);
+  }
+</style>
+</head>
 
-          .r-5 {
-            margin-left: calc(var(--scale) * -0.5em);
-            margin-top: calc(var(--scale) * -1em);
-            transform: rotate(45deg);
-          }
+<body>
+  <div class="container">
+    <div class="tree">
 
-          .r-6 {
-            margin-left: calc(var(--scale) * 9.75em);
-            margin-top: calc(var(--scale) * -1em);
-            transform: rotate(-45deg);
-          }
+      <div class="branch" style="--x:0">
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
 
-          .r-7 {
-            margin-left: calc(var(--scale) * 10.25em);
-            margin-top: calc(var(--scale) * -11.75em);
-            transform: rotate(45deg);
-          }
+      <div class="branch" style="--x:1">
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
 
-          .r-8 {
-            margin-left: calc(var(--scale) * -0.5em);
-            margin-top: calc(var(--scale) * -11.75em);
-            transform: rotate(-45deg);
-          }
+      <div class="branch" style="--x:2">
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
 
-          @keyframes rotate {
-            0% {
-              transform: rotate(0deg);
-              --color: yellow;
-            }
+      <div class="branch" style="--x:3">
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
 
-            100% {
-              transform: rotate(360deg);
-              --color: orange;
-            }
-          }
-        </style>
-      </head>
+      <div class="stem">
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
 
-      <body>
-        <div class="sun">
-          <div class="center"></div>
-          <div class="ray r-1"></div>
-          <div class="ray r-2"></div>
-          <div class="ray r-3"></div>
-          <div class="ray r-4"></div>
-          <div class="ray r-5"></div>
-          <div class="ray r-6"></div>
-          <div class="ray r-7"></div>
-          <div class="ray r-8"></div>
-        </div>
-      </body>
-    </html>`;
+      <span class="shadow"></span>
+    </div>
+  </div>
+</body>
+</html>`;
 
 const Woodllandwldexplorrloade = () => {
   const wodllandwldexplorrNavigation = useNavigation();
@@ -144,11 +164,7 @@ const Woodllandwldexplorrloade = () => {
 
   return (
     <ImageBackground
-      source={
-        Platform.OS === 'ios'
-          ? require('../../assets/imgs/wodllandwldexploloade.png')
-          : require('../../assets/imgs/wodllandwlprivbgand.png')
-      }
+      source={require('../../assets/imgs/wodllandwldexploloade.png')}
       style={styles.wodllandwldexplorrimageBg}>
       <ScrollView
         contentContainerStyle={styles.wodllandwldexplorrscrollContent}

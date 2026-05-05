@@ -188,7 +188,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 18,
     paddingBottom: 22,
-    backgroundColor: '#120A38',
     marginTop: 18,
   },
   wodllandwldexplorrEyebrow: {
@@ -260,7 +259,7 @@ const styles = StyleSheet.create({
     width: 8,
     height: 4,
     borderRadius: 2,
-    backgroundColor: '#2C1A64',
+    backgroundColor: '#FFFFFF33',
     marginRight: 8,
   },
   wodllandwldexplorrDotActive: {

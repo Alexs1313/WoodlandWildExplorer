@@ -1,4 +1,4 @@
-package com.woodlandwildexplorer
+package com.wilds.woodland.explorer
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

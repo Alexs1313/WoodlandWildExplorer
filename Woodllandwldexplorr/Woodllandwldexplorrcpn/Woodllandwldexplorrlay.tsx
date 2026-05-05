@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {ImageBackground, ScrollView, StyleSheet, View} from 'react-native';
 
 const Woodllandwldexplorrlay = ({
   children,
@@ -11,7 +11,9 @@ const Woodllandwldexplorrlay = ({
   bounce?: boolean;
 }) => {
   return (
-    <View style={styles.wodllandwldexplorrlayBackground}>
+    <ImageBackground
+      source={require('../../assets/imgs/wodllandwldexploloade.png')}
+      style={styles.wodllandwldexplorrlayBackground}>
       {wodllandwldexplorrlayScroll ? (
         <ScrollView
           bounces={bounce}
@@ -22,7 +24,7 @@ const Woodllandwldexplorrlay = ({
       ) : (
         <View style={styles.wodllandwldexplorrlayFill}>{children}</View>
       )}
-    </View>
+    </ImageBackground>
   );
 };
 
