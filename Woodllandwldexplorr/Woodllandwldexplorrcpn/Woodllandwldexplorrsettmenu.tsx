@@ -56,7 +56,7 @@ const Woodllandwldexplorrsettmenu = (props: Props) => {
             <Pressable
               onPress={() =>
                 Linking.openURL(
-                  'https://apps.apple.com/us/app/wilds-woodland-e%D1%85plorer/id6766539587',
+                  'https://apps.apple.com/us/app/wilds-woodland-e%D1%85plorer/id6766780360',
                 )
               }
               style={styles.wodllandwldexplorrMenuItem}>
