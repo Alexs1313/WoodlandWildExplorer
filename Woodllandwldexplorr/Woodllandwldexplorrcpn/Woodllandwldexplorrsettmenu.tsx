@@ -22,7 +22,7 @@ const Woodllandwldexplorrsettmenu = (props: Props) => {
   const wodllandwldexplorrOnPrivacy = async () => {
     wodllandwldexplorrClose();
     const wodllandwldexplorrUrl =
-      'https://www.termsfeed.com/live/e4f83beb-2dd3-45d5-8b14-eaac1514e434';
+      'https://www.termsfeed.com/live/b183ffaf-33dc-4c3a-967b-abf454135733';
     const wodllandwldexplorrOk = await Linking.canOpenURL(
       wodllandwldexplorrUrl,
     );
@@ -56,7 +56,7 @@ const Woodllandwldexplorrsettmenu = (props: Props) => {
             <Pressable
               onPress={() =>
                 Linking.openURL(
-                  'https://apps.apple.com/us/app/wilds-woodland-e%D1%85plorer/id6766780360',
+                  'https://apps.apple.com/us/app/the-wilds-e%D1%85plorer/id6766976722',
                 )
               }
               style={styles.wodllandwldexplorrMenuItem}>

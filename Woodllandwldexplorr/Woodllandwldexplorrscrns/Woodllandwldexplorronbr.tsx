@@ -32,7 +32,7 @@ const Woodllandwldexplorronbr = () => {
       {
         key: 'discover',
         eyebrow: 'DISCOVER LOCATIONS',
-        title: 'Explore the Wild Side of Woodlands',
+        title: 'Explore the Hidden Side of Woodlands',
         description:
           'Find breathtaking wildlife reserves, nature centers, and forest trails. Navigate to secret spots only explorers know about.',
         image: require('../../assets/imgs/wodllandwldexon1.png'),
