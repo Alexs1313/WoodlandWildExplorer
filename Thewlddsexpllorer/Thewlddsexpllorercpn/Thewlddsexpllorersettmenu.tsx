@@ -4,54 +4,54 @@ import {useFocusEffect} from '@react-navigation/native';
 import {Image, Linking, Pressable, StyleSheet, Text, View} from 'react-native';
 
 type Props = {
-  wodllandwldexplorrAnchorTop?: number;
-  wodllandwldexplorrAnchorRight?: number;
+  thewlddsexpllorerAnchorTop?: number;
+  thewlddsexpllorerAnchorRight?: number;
 };
 
-const Woodllandwldexplorrsettmenu = (props: Props) => {
-  const [wodllandwldexplorrOpen, wodllandwldexplorrSetOpen] = useState(false);
+const Thewlddsexpllorersettmenu = (props: Props) => {
+  const [thewlddsexpllorerOpen, thewlddsexpllorerSetOpen] = useState(false);
 
-  const wodllandwldexplorrClose = () => wodllandwldexplorrSetOpen(false);
+  const thewlddsexpllorerClose = () => thewlddsexpllorerSetOpen(false);
 
   useFocusEffect(
     useCallback(() => {
-      wodllandwldexplorrSetOpen(false);
+      thewlddsexpllorerSetOpen(false);
     }, []),
   );
 
-  const wodllandwldexplorrOnPrivacy = async () => {
-    wodllandwldexplorrClose();
-    const wodllandwldexplorrUrl =
+  const thewlddsexpllorerOnPrivacy = async () => {
+    thewlddsexpllorerClose();
+    const thewlddsexpllorerUrl =
       'https://www.termsfeed.com/live/b183ffaf-33dc-4c3a-967b-abf454135733';
-    const wodllandwldexplorrOk = await Linking.canOpenURL(
-      wodllandwldexplorrUrl,
+    const thewlddsexpllorerOk = await Linking.canOpenURL(
+      thewlddsexpllorerUrl,
     );
-    if (wodllandwldexplorrOk) {
-      await Linking.openURL(wodllandwldexplorrUrl);
+    if (thewlddsexpllorerOk) {
+      await Linking.openURL(thewlddsexpllorerUrl);
     }
   };
 
-  const wodllandwldexplorrTop = props.wodllandwldexplorrAnchorTop ?? 112;
-  const wodllandwldexplorrRight = props.wodllandwldexplorrAnchorRight ?? 16;
+  const thewlddsexpllorerTop = props.thewlddsexpllorerAnchorTop ?? 112;
+  const thewlddsexpllorerRight = props.thewlddsexpllorerAnchorRight ?? 16;
 
   return (
     <>
       <Pressable
-        style={styles.wodllandwldexplorrHeaderBtn}
-        onPress={() => wodllandwldexplorrSetOpen(v => !v)}>
+        style={styles.thewlddsexpllorerHeaderBtn}
+        onPress={() => thewlddsexpllorerSetOpen(v => !v)}>
         <Image source={require('../../assets/imgs/wodllandwllilssett.png')} />
       </Pressable>
 
-      {wodllandwldexplorrOpen ? (
+      {thewlddsexpllorerOpen ? (
         <>
           <Pressable
-            onPress={wodllandwldexplorrClose}
-            style={styles.wodllandwldexplorrMenuOverlay}
+            onPress={thewlddsexpllorerClose}
+            style={styles.thewlddsexpllorerMenuOverlay}
           />
           <View
             style={[
-              styles.wodllandwldexplorrMenuCard,
-              {top: wodllandwldexplorrTop, right: wodllandwldexplorrRight},
+              styles.thewlddsexpllorerMenuCard,
+              {top: thewlddsexpllorerTop, right: thewlddsexpllorerRight},
             ]}>
             <Pressable
               onPress={() =>
@@ -59,33 +59,33 @@ const Woodllandwldexplorrsettmenu = (props: Props) => {
                   'https://apps.apple.com/us/app/the-wilds-e%D1%85plorer/id6766976722',
                 )
               }
-              style={styles.wodllandwldexplorrMenuItem}>
+              style={styles.thewlddsexpllorerMenuItem}>
               <Image
                 source={require('../../assets/imgs/wodllandwlratte.png')}
               />
-              <View style={styles.wodllandwldexplorrMenuTextWrap}>
-                <Text style={styles.wodllandwldexplorrMenuTitle}>
+              <View style={styles.thewlddsexpllorerMenuTextWrap}>
+                <Text style={styles.thewlddsexpllorerMenuTitle}>
                   Rate the App
                 </Text>
-                <Text style={styles.wodllandwldexplorrMenuSub}>
+                <Text style={styles.thewlddsexpllorerMenuSub}>
                   Leave a review
                 </Text>
               </View>
             </Pressable>
 
-            <View style={styles.wodllandwldexplorrMenuDivider} />
+            <View style={styles.thewlddsexpllorerMenuDivider} />
 
             <Pressable
-              onPress={wodllandwldexplorrOnPrivacy}
-              style={styles.wodllandwldexplorrMenuItem}>
+              onPress={thewlddsexpllorerOnPrivacy}
+              style={styles.thewlddsexpllorerMenuItem}>
               <Image
                 source={require('../../assets/imgs/wodllandwlprivs.png')}
               />
-              <View style={styles.wodllandwldexplorrMenuTextWrap}>
-                <Text style={styles.wodllandwldexplorrMenuTitle}>
+              <View style={styles.thewlddsexpllorerMenuTextWrap}>
+                <Text style={styles.thewlddsexpllorerMenuTitle}>
                   Privacy Policy
                 </Text>
-                <Text style={styles.wodllandwldexplorrMenuSub}>
+                <Text style={styles.thewlddsexpllorerMenuSub}>
                   Read our policy
                 </Text>
               </View>
@@ -97,10 +97,10 @@ const Woodllandwldexplorrsettmenu = (props: Props) => {
   );
 };
 
-export default Woodllandwldexplorrsettmenu;
+export default Thewlddsexpllorersettmenu;
 
 const styles = StyleSheet.create({
-  wodllandwldexplorrHeaderBtn: {
+  thewlddsexpllorerHeaderBtn: {
     width: 44,
     height: 44,
     borderRadius: 14,
@@ -110,11 +110,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  wodllandwldexplorrMenuOverlay: {
+  thewlddsexpllorerMenuOverlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: 'transparent',
   },
-  wodllandwldexplorrMenuCard: {
+  thewlddsexpllorerMenuCard: {
     position: 'absolute',
     width: 240,
     borderRadius: 18,
@@ -124,31 +124,31 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     zIndex: 1,
   },
-  wodllandwldexplorrMenuItem: {
+  thewlddsexpllorerMenuItem: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
     paddingHorizontal: 14,
     paddingVertical: 14,
   },
-  wodllandwldexplorrMenuEmoji: {
+  thewlddsexpllorerMenuEmoji: {
     fontSize: 16,
     width: 26,
     textAlign: 'center',
   },
-  wodllandwldexplorrMenuTextWrap: {flex: 1},
-  wodllandwldexplorrMenuTitle: {
+  thewlddsexpllorerMenuTextWrap: {flex: 1},
+  thewlddsexpllorerMenuTitle: {
     color: '#EDE8FF',
     fontSize: 14,
     fontWeight: '800',
   },
-  wodllandwldexplorrMenuSub: {
+  thewlddsexpllorerMenuSub: {
     marginTop: 2,
     color: '#A090CC',
     fontSize: 12,
     fontWeight: '500',
   },
-  wodllandwldexplorrMenuDivider: {
+  thewlddsexpllorerMenuDivider: {
     height: 1,
     backgroundColor: '#3828A0',
     opacity: 0.6,

@@ -1,18 +1,18 @@
-export type WoodllandwldexplorrFactCard = {
+export type ThewlddsexpllorerFactCard = {
   id: string;
   emoji: string;
   title: string;
   body: string;
 };
 
-export type WoodllandwldexplorrMatchQuestion = {
+export type ThewlddsexpllorerMatchQuestion = {
   id: string;
   statements: string[];
   options: string[];
   correctByStatementIndex: Record<number, string>;
 };
 
-export const wodllandwldexplorrFactCards: WoodllandwldexplorrFactCard[] = [
+export const thewlddsexpllorerFactCards: ThewlddsexpllorerFactCard[] = [
   {
     id: 'tree-network',
     emoji: '🌳',
@@ -456,7 +456,7 @@ export const wodllandwldexplorrFactCards: WoodllandwldexplorrFactCard[] = [
   },
 ];
 
-export const wodllandwldexplorrMatchQuestions: WoodllandwldexplorrMatchQuestion[] =
+export const thewlddsexpllorerMatchQuestions: ThewlddsexpllorerMatchQuestion[] =
   [
     {
       id: 'q1',

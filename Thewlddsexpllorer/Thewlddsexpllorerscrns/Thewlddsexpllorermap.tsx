@@ -1,8 +1,8 @@
 // map
 
-import Woodllandwldexplorrsettmenu from '../Woodllandwldexplorrcpn/Woodllandwldexplorrsettmenu';
-import {wodllandwldexplorrLocations} from '../Woodllandwldexplorrdata/Woodllandwldexplorrlocations';
-import {useWodllandwldexplorrFavorites} from '../Woodllandwldexplorrdata/Woodllandwldexplorrfavorites-context';
+import Thewlddsexpllorersettmenu from '../Thewlddsexpllorercpn/Thewlddsexpllorersettmenu';
+import {thewlddsexpllorerLocations} from '../Thewlddsexpllorerdata/Thewlddsexpllorerlocations';
+import {useThewlddsexpllorerFavorites} from '../Thewlddsexpllorerdata/Thewlddsexpllorerfavorites-context';
 import Orientation from 'react-native-orientation-locker';
 
 import React, {useCallback, useMemo, useState} from 'react';
@@ -12,26 +12,26 @@ import {Image, Platform, Pressable, StyleSheet, Text, View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
 import {useFocusEffect, useNavigation} from '@react-navigation/native';
-import Woodllandwldexplorrlay from '../Woodllandwldexplorrcpn/Woodllandwldexplorrlay';
+import Thewlddsexpllorerlay from '../Thewlddsexpllorercpn/Thewlddsexpllorerlay';
 
-const Woodllandwldexplorrmap = () => {
-  const wodllandwldexplorrNavigation = useNavigation();
-  const {wodllandwldexplorrIsFav} = useWodllandwldexplorrFavorites();
-  const [wodllandwldexplorrSelectedId, wodllandwldexplorrSetSelectedId] =
+const Thewlddsexpllorermap = () => {
+  const thewlddsexpllorerNavigation = useNavigation();
+  const {thewlddsexpllorerIsFav} = useThewlddsexpllorerFavorites();
+  const [thewlddsexpllorerSelectedId, thewlddsexpllorerSetSelectedId] =
     useState<string | null>(null);
 
   useFocusEffect(
     useCallback(() => {
       Orientation.lockToPortrait();
       return () => {
-        wodllandwldexplorrSetSelectedId(null);
+        thewlddsexpllorerSetSelectedId(null);
         Orientation.unlockAllOrientations();
       };
     }, []),
   );
 
-  const wodllandwldexplorrInitialRegion = useMemo(() => {
-    const first = wodllandwldexplorrLocations[0];
+  const thewlddsexpllorerInitialRegion = useMemo(() => {
+    const first = thewlddsexpllorerLocations[0];
     return {
       latitude: first.coords.lat,
       longitude: first.coords.lon,
@@ -40,57 +40,57 @@ const Woodllandwldexplorrmap = () => {
     };
   }, []);
 
-  const wodllandwldexplorrSelected = useMemo(() => {
-    if (!wodllandwldexplorrSelectedId) {
+  const thewlddsexpllorerSelected = useMemo(() => {
+    if (!thewlddsexpllorerSelectedId) {
       return null;
     }
     return (
-      wodllandwldexplorrLocations.find(
-        l => l.id === wodllandwldexplorrSelectedId,
+      thewlddsexpllorerLocations.find(
+        l => l.id === thewlddsexpllorerSelectedId,
       ) ?? null
     );
-  }, [wodllandwldexplorrSelectedId]);
+  }, [thewlddsexpllorerSelectedId]);
 
-  const wodllandwldexplorrOpenDetails = () => {
-    if (!wodllandwldexplorrSelected) {
+  const thewlddsexpllorerOpenDetails = () => {
+    if (!thewlddsexpllorerSelected) {
       return;
     }
-    (wodllandwldexplorrNavigation as any).navigate(
-      'Woodllandwldexplorrlocdet',
+    (thewlddsexpllorerNavigation as any).navigate(
+      'Thewlddsexpllorerlocdet',
       {
-        id: wodllandwldexplorrSelected.id,
+        id: thewlddsexpllorerSelected.id,
       },
     );
   };
 
   return (
-    <Woodllandwldexplorrlay bounce={false}>
-      <View style={styles.wodllandwldexplorrRoot}>
-        <View style={styles.wodllandwldexplorrHeader}>
+    <Thewlddsexpllorerlay bounce={false}>
+      <View style={styles.thewlddsexpllorerRoot}>
+        <View style={styles.thewlddsexpllorerHeader}>
           <View>
-            <Text style={styles.wodllandwldexplorrTitle}>Explorer Map</Text>
-            <Text style={styles.wodllandwldexplorrSubtitle}>
+            <Text style={styles.thewlddsexpllorerTitle}>Explorer Map</Text>
+            <Text style={styles.thewlddsexpllorerSubtitle}>
               Tap a pin to see details
             </Text>
           </View>
 
           {Platform.OS === 'ios' && (
-            <Woodllandwldexplorrsettmenu wodllandwldexplorrAnchorTop={50} />
+            <Thewlddsexpllorersettmenu thewlddsexpllorerAnchorTop={50} />
           )}
         </View>
 
-        <View style={styles.wodllandwldexplorrMapWrap}>
+        <View style={styles.thewlddsexpllorerMapWrap}>
           <MapView
-            style={styles.wodllandwldexplorrMap}
-            initialRegion={wodllandwldexplorrInitialRegion}
+            style={styles.thewlddsexpllorerMap}
+            initialRegion={thewlddsexpllorerInitialRegion}
             onPress={e => {
               const action = (e as any)?.nativeEvent?.action;
               if (action === 'marker-press' || action === 'callout-press') {
                 return;
               }
-              wodllandwldexplorrSetSelectedId(null);
+              thewlddsexpllorerSetSelectedId(null);
             }}>
-            {wodllandwldexplorrLocations.map(loc => (
+            {thewlddsexpllorerLocations.map(loc => (
               <Marker
                 key={loc.id}
                 coordinate={{
@@ -98,13 +98,13 @@ const Woodllandwldexplorrmap = () => {
                   longitude: loc.coords.lon,
                 }}
                 pinColor={
-                  wodllandwldexplorrIsFav(loc.id)
+                  thewlddsexpllorerIsFav(loc.id)
                     ? '#F5C800'
-                    : loc.id === wodllandwldexplorrSelectedId
+                    : loc.id === thewlddsexpllorerSelectedId
                     ? '#9B5CF6'
                     : undefined
                 }
-                onPress={() => wodllandwldexplorrSetSelectedId(loc.id)}>
+                onPress={() => thewlddsexpllorerSetSelectedId(loc.id)}>
                 <Image
                   source={require('../../assets/imgs/wodllandwllimarkr.png')}
                 />
@@ -113,57 +113,57 @@ const Woodllandwldexplorrmap = () => {
           </MapView>
         </View>
 
-        {wodllandwldexplorrSelected ? (
-          <View style={styles.wodllandwldexplorrSheet}>
+        {thewlddsexpllorerSelected ? (
+          <View style={styles.thewlddsexpllorerSheet}>
             <Pressable
-              onPress={() => wodllandwldexplorrSetSelectedId(null)}
+              onPress={() => thewlddsexpllorerSetSelectedId(null)}
               hitSlop={10}
-              style={styles.wodllandwldexplorrSheetClose}>
+              style={styles.thewlddsexpllorerSheetClose}>
               <Image
                 source={require('../../assets/imgs/wodllandwllilwacls.png')}
               />
             </Pressable>
 
-            <View style={styles.wodllandwldexplorrSheetRow}>
+            <View style={styles.thewlddsexpllorerSheetRow}>
               <Image
-                source={wodllandwldexplorrSelected.image}
-                style={styles.wodllandwldexplorrSheetImage}
+                source={thewlddsexpllorerSelected.image}
+                style={styles.thewlddsexpllorerSheetImage}
               />
-              <View style={styles.wodllandwldexplorrSheetText}>
-                <View style={styles.wodllandwldexplorrSheetTag}>
-                  <Text style={styles.wodllandwldexplorrSheetTagText}>
-                    {wodllandwldexplorrSelected.tags[0] ?? 'Location'}
+              <View style={styles.thewlddsexpllorerSheetText}>
+                <View style={styles.thewlddsexpllorerSheetTag}>
+                  <Text style={styles.thewlddsexpllorerSheetTagText}>
+                    {thewlddsexpllorerSelected.tags[0] ?? 'Location'}
                   </Text>
                 </View>
                 <Text
-                  style={styles.wodllandwldexplorrSheetTitle}
+                  style={styles.thewlddsexpllorerSheetTitle}
                   numberOfLines={1}>
-                  {wodllandwldexplorrSelected.title}
+                  {thewlddsexpllorerSelected.title}
                 </Text>
                 <Text
-                  style={styles.wodllandwldexplorrSheetMeta}
+                  style={styles.thewlddsexpllorerSheetMeta}
                   numberOfLines={2}>
-                  {wodllandwldexplorrSelected.cityCountry}
+                  {thewlddsexpllorerSelected.cityCountry}
                 </Text>
               </View>
             </View>
 
             <Pressable
-              onPress={wodllandwldexplorrOpenDetails}
-              style={styles.wodllandwldexplorrSheetBtn}>
-              <Text style={styles.wodllandwldexplorrSheetBtnText}>Details</Text>
+              onPress={thewlddsexpllorerOpenDetails}
+              style={styles.thewlddsexpllorerSheetBtn}>
+              <Text style={styles.thewlddsexpllorerSheetBtnText}>Details</Text>
             </Pressable>
           </View>
         ) : null}
       </View>
-    </Woodllandwldexplorrlay>
+    </Thewlddsexpllorerlay>
   );
 };
 
-export default Woodllandwldexplorrmap;
+export default Thewlddsexpllorermap;
 
 const styles = StyleSheet.create({
-  wodllandwldexplorrHeaderBtn: {
+  thewlddsexpllorerHeaderBtn: {
     width: 44,
     height: 44,
     borderRadius: 14,
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  wodllandwldexplorrMapWrap: {
+  thewlddsexpllorerMapWrap: {
     marginTop: 16,
     height: '76%',
     borderRadius: 24,
@@ -183,52 +183,52 @@ const styles = StyleSheet.create({
     borderColor: '#3828A0',
   },
 
-  wodllandwldexplorrRoot: {
+  thewlddsexpllorerRoot: {
     flex: 1,
     paddingTop: 60,
     paddingHorizontal: 16,
   },
-  wodllandwldexplorrHeader: {
+  thewlddsexpllorerHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  wodllandwldexplorrTitle: {
+  thewlddsexpllorerTitle: {
     color: '#EDE8FF',
     fontSize: 22,
     fontWeight: '800',
   },
-  wodllandwldexplorrSubtitle: {
+  thewlddsexpllorerSubtitle: {
     marginTop: 4,
     color: '#A090CC',
     fontSize: 13,
     fontWeight: '400',
   },
 
-  wodllandwldexplorrMap: {
+  thewlddsexpllorerMap: {
     width: '100%',
     height: '100%',
   },
-  wodllandwldexplorrPagerDots: {
+  thewlddsexpllorerPagerDots: {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
     gap: 8,
     paddingVertical: 10,
   },
-  wodllandwldexplorrPagerDot: {
+  thewlddsexpllorerPagerDot: {
     width: 28,
     height: 4,
     borderRadius: 2,
     backgroundColor: '#24186A',
   },
-  wodllandwldexplorrPagerDotActive: {
+  thewlddsexpllorerPagerDotActive: {
     width: 28,
     height: 4,
     borderRadius: 2,
     backgroundColor: '#9B5CF6',
   },
-  wodllandwldexplorrSheet: {
+  thewlddsexpllorerSheet: {
     position: 'absolute',
     bottom: 75,
     left: 0,
@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
 
-  wodllandwldexplorrSheetClose: {
+  thewlddsexpllorerSheetClose: {
     position: 'absolute',
     top: 10,
     right: 10,
@@ -254,28 +254,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  wodllandwldexplorrSheetCloseText: {
+  thewlddsexpllorerSheetCloseText: {
     color: '#A090CC',
     fontSize: 16,
     fontWeight: '900',
     marginTop: -1,
   },
-  wodllandwldexplorrSheetRow: {
+  thewlddsexpllorerSheetRow: {
     flexDirection: 'row',
     gap: 12,
     alignItems: 'center',
     paddingRight: 18,
   },
-  wodllandwldexplorrSheetImage: {
+  thewlddsexpllorerSheetImage: {
     width: 80,
     height: 80,
     borderRadius: 14,
     resizeMode: 'cover',
   },
-  wodllandwldexplorrSheetText: {
+  thewlddsexpllorerSheetText: {
     flex: 1,
   },
-  wodllandwldexplorrSheetTag: {
+  thewlddsexpllorerSheetTag: {
     alignSelf: 'flex-start',
     backgroundColor: '#24186A',
     borderWidth: 1,
@@ -285,24 +285,24 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     marginBottom: 8,
   },
-  wodllandwldexplorrSheetTagText: {
+  thewlddsexpllorerSheetTagText: {
     color: '#EDE8FF',
     fontSize: 11,
     fontWeight: '700',
   },
-  wodllandwldexplorrSheetTitle: {
+  thewlddsexpllorerSheetTitle: {
     color: '#EDE8FF',
     fontSize: 16,
     fontWeight: '800',
   },
-  wodllandwldexplorrSheetMeta: {
+  thewlddsexpllorerSheetMeta: {
     marginTop: 4,
     color: '#A090CC',
     fontSize: 12,
     fontWeight: '600',
     lineHeight: 16,
   },
-  wodllandwldexplorrSheetBtn: {
+  thewlddsexpllorerSheetBtn: {
     marginTop: 12,
     height: 48,
     borderRadius: 16,
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  wodllandwldexplorrSheetBtnText: {
+  thewlddsexpllorerSheetBtnText: {
     color: '#120A38',
     fontSize: 14,
     fontWeight: '800',

@@ -1,66 +1,66 @@
 // facts screen
 
-import Woodllandwldexplorrlay from '../Woodllandwldexplorrcpn/Woodllandwldexplorrlay';
-import {wodllandwldexplorrFactCards} from '../Woodllandwldexplorrdata/Woodllandwldexplorrfacts-data';
+import Thewlddsexpllorerlay from '../Thewlddsexpllorercpn/Thewlddsexpllorerlay';
+import {thewlddsexpllorerFactCards} from '../Thewlddsexpllorerdata/Thewlddsexpllorerfacts-data';
 
 import React from 'react';
 import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const Woodllandwldexplorrfacts = () => {
-  const wodllandwldexplorrNavigation = useNavigation();
+const Thewlddsexpllorerfacts = () => {
+  const thewlddsexpllorerNavigation = useNavigation();
   return (
-    <Woodllandwldexplorrlay bounce={false}>
-      <View style={styles.wodllandwldexplorrRoot}>
-        <View style={styles.wodllandwldexplorrHeader}>
+    <Thewlddsexpllorerlay bounce={false}>
+      <View style={styles.thewlddsexpllorerRoot}>
+        <View style={styles.thewlddsexpllorerHeader}>
           <View>
-            <Text style={styles.wodllandwldexplorrTitle}>Did You Know?</Text>
-            <Text style={styles.wodllandwldexplorrSubtitle}>
+            <Text style={styles.thewlddsexpllorerTitle}>Did You Know?</Text>
+            <Text style={styles.thewlddsexpllorerSubtitle}>
               Wild Nature Facts
             </Text>
           </View>
 
           <Pressable
             onPress={() =>
-              (wodllandwldexplorrNavigation as any).navigate(
-                'Woodllandwldexplorrfactsquiz',
+              (thewlddsexpllorerNavigation as any).navigate(
+                'Thewlddsexpllorerfactsquiz',
               )
             }
-            style={styles.wodllandwldexplorrChallengeBtn}>
+            style={styles.thewlddsexpllorerChallengeBtn}>
             <Image
               source={require('../../assets/imgs/wodllandwllilwack.png')}
             />
-            <Text style={styles.wodllandwldexplorrChallengeBtnText}>
+            <Text style={styles.thewlddsexpllorerChallengeBtnText}>
               Challenge
             </Text>
           </Pressable>
         </View>
 
         <FlatList
-          data={wodllandwldexplorrFactCards}
+          data={thewlddsexpllorerFactCards}
           keyExtractor={item => item.id}
           scrollEnabled={false}
-          contentContainerStyle={styles.wodllandwldexplorrList}
+          contentContainerStyle={styles.thewlddsexpllorerList}
           showsVerticalScrollIndicator={false}
           renderItem={({item, index}) => (
-            <View style={styles.wodllandwldexplorrCard}>
-              <View style={styles.wodllandwldexplorrCardTop}>
+            <View style={styles.thewlddsexpllorerCard}>
+              <View style={styles.thewlddsexpllorerCardTop}>
                 <View
                   style={[
-                    styles.wodllandwldexplorrIconWrap,
+                    styles.thewlddsexpllorerIconWrap,
                     index % 2 === 0
-                      ? styles.wodllandwldexplorrIconWrapPurple
-                      : styles.wodllandwldexplorrIconWrapGold,
+                      ? styles.thewlddsexpllorerIconWrapPurple
+                      : styles.thewlddsexpllorerIconWrapGold,
                   ]}>
-                  <Text style={styles.wodllandwldexplorrIconText}>
+                  <Text style={styles.thewlddsexpllorerIconText}>
                     {item.emoji}
                   </Text>
                 </View>
-                <Text style={styles.wodllandwldexplorrCardTitle}>
+                <Text style={styles.thewlddsexpllorerCardTitle}>
                   {item.title}
                 </Text>
               </View>
-              <Text style={styles.wodllandwldexplorrCardBody}>{item.body}</Text>
+              <Text style={styles.thewlddsexpllorerCardBody}>{item.body}</Text>
 
               <View
                 style={{
@@ -79,10 +79,10 @@ const Woodllandwldexplorrfacts = () => {
                 />
                 <Text
                   style={[
-                    styles.wodllandwldexplorrCardFoot,
+                    styles.thewlddsexpllorerCardFoot,
                     index % 2 === 0
-                      ? styles.wodllandwldexplorrCardFootPurple
-                      : styles.wodllandwldexplorrCardFootGold,
+                      ? styles.thewlddsexpllorerCardFootPurple
+                      : styles.thewlddsexpllorerCardFootGold,
                   ]}>
                   Nature Fact #{index + 1}
                 </Text>
@@ -91,50 +91,50 @@ const Woodllandwldexplorrfacts = () => {
           )}
         />
       </View>
-    </Woodllandwldexplorrlay>
+    </Thewlddsexpllorerlay>
   );
 };
 
-export default Woodllandwldexplorrfacts;
+export default Thewlddsexpllorerfacts;
 
 const styles = StyleSheet.create({
-  wodllandwldexplorrCard: {
+  thewlddsexpllorerCard: {
     backgroundColor: '#1D1255',
     borderWidth: 1,
     borderColor: '#3828A0',
     borderRadius: 18,
     padding: 14,
   },
-  wodllandwldexplorrCardTop: {
+  thewlddsexpllorerCardTop: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
   },
 
-  wodllandwldexplorrRoot: {
+  thewlddsexpllorerRoot: {
     flex: 1,
     paddingTop: 60,
     paddingHorizontal: 16,
     paddingBottom: 10,
   },
-  wodllandwldexplorrHeader: {
+  thewlddsexpllorerHeader: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
 
-  wodllandwldexplorrTitle: {
+  thewlddsexpllorerTitle: {
     color: '#EDE8FF',
     fontSize: 22,
     fontWeight: '800',
   },
-  wodllandwldexplorrSubtitle: {
+  thewlddsexpllorerSubtitle: {
     color: '#A090CC',
     marginTop: 4,
     fontSize: 13,
     fontWeight: '400',
   },
-  wodllandwldexplorrChallengeBtn: {
+  thewlddsexpllorerChallengeBtn: {
     height: 40,
     borderRadius: 14,
     backgroundColor: '#F5C800',
@@ -144,18 +144,18 @@ const styles = StyleSheet.create({
     gap: 6,
     justifyContent: 'center',
   },
-  wodllandwldexplorrChallengeBtnText: {
+  thewlddsexpllorerChallengeBtnText: {
     color: '#120A38',
     fontSize: 12,
     fontWeight: '900',
   },
-  wodllandwldexplorrList: {
+  thewlddsexpllorerList: {
     paddingTop: 14,
     paddingBottom: 120,
     gap: 12,
   },
 
-  wodllandwldexplorrIconWrap: {
+  thewlddsexpllorerIconWrap: {
     width: 44,
     height: 44,
     borderRadius: 14,
@@ -164,38 +164,38 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  wodllandwldexplorrIconWrapPurple: {
+  thewlddsexpllorerIconWrapPurple: {
     backgroundColor: '#7C3AED',
     borderColor: '#7C3AED',
   },
-  wodllandwldexplorrIconWrapGold: {
+  thewlddsexpllorerIconWrapGold: {
     backgroundColor: '#C8922A',
     borderColor: '#C8922A',
   },
-  wodllandwldexplorrIconText: {
+  thewlddsexpllorerIconText: {
     fontSize: 16,
   },
-  wodllandwldexplorrCardTitle: {
+  thewlddsexpllorerCardTitle: {
     color: '#EDE8FF',
     fontSize: 14,
     fontWeight: '800',
     flex: 1,
   },
-  wodllandwldexplorrCardBody: {
+  thewlddsexpllorerCardBody: {
     marginTop: 10,
     color: '#A090CC',
     fontSize: 13,
     fontWeight: '500',
     lineHeight: 18,
   },
-  wodllandwldexplorrCardFoot: {
+  thewlddsexpllorerCardFoot: {
     fontSize: 12,
     fontWeight: '700',
   },
-  wodllandwldexplorrCardFootPurple: {
+  thewlddsexpllorerCardFootPurple: {
     color: '#7C3AED',
   },
-  wodllandwldexplorrCardFootGold: {
+  thewlddsexpllorerCardFootGold: {
     color: '#C8922A',
   },
 });

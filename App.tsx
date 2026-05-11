@@ -1,11 +1,11 @@
 import {NavigationContainer} from '@react-navigation/native';
 
-import Woodllandwldexplorrstack from './Woodllandwldexplorr/Woodllandwldexplorrnav/Woodllandwldexplorrstack.tsx';
+import Thewlddsexpllorerstack from './Thewlddsexpllorer/Thewlddsexpllorernav/Thewlddsexpllorerstack.tsx';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Woodllandwldexplorrstack />
+      <Thewlddsexpllorerstack />
     </NavigationContainer>
   );
 };

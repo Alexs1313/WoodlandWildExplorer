@@ -1,82 +1,82 @@
 // result screens
 
 import {useNavigation, useRoute} from '@react-navigation/native';
-import Woodllandwldexplorrlay from '../Woodllandwldexplorrcpn/Woodllandwldexplorrlay';
+import Thewlddsexpllorerlay from '../Thewlddsexpllorercpn/Thewlddsexpllorerlay';
 
 import React from 'react';
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 
-type WoodllandwldexplorrRouteParams = {correct?: number; total?: number};
+type ThewlddsexpllorerRouteParams = {correct?: number; total?: number};
 
-const Woodllandwldexplorrfactsresult = () => {
-  const wodllandwldexplorrNavigation = useNavigation();
-  const wodllandwldexplorrRoute = useRoute();
+const Thewlddsexpllorerfactsresult = () => {
+  const thewlddsexpllorerNavigation = useNavigation();
+  const thewlddsexpllorerRoute = useRoute();
   const {correct = 0, total = 0} =
-    (wodllandwldexplorrRoute.params as WoodllandwldexplorrRouteParams) ?? {};
+    (thewlddsexpllorerRoute.params as ThewlddsexpllorerRouteParams) ?? {};
 
   return (
-    <Woodllandwldexplorrlay wodllandwldexplorrlayScroll={false} bounce={false}>
-      <View style={styles.wodllandwldexplorrRoot}>
-        <View style={styles.wodllandwldexplorrCard}>
-          <Text style={styles.wodllandwldexplorrEmoji}>🌱</Text>
-          <Text style={styles.wodllandwldexplorrTitle}>Keep exploring!</Text>
+    <Thewlddsexpllorerlay thewlddsexpllorerlayScroll={false} bounce={false}>
+      <View style={styles.thewlddsexpllorerRoot}>
+        <View style={styles.thewlddsexpllorerCard}>
+          <Text style={styles.thewlddsexpllorerEmoji}>🌱</Text>
+          <Text style={styles.thewlddsexpllorerTitle}>Keep exploring!</Text>
 
-          <View style={styles.wodllandwldexplorrScorePill}>
+          <View style={styles.thewlddsexpllorerScorePill}>
             <Image source={require('../../assets/imgs/wodllandwllipprz.png')} />
-            <Text style={styles.wodllandwldexplorrScoreText}>
+            <Text style={styles.thewlddsexpllorerScoreText}>
               {correct}/{total} correct
             </Text>
           </View>
 
           <Pressable
             onPress={() =>
-              (wodllandwldexplorrNavigation as any).replace(
-                'Woodllandwldexplorrfactsquiz',
+              (thewlddsexpllorerNavigation as any).replace(
+                'Thewlddsexpllorerfactsquiz',
               )
             }
-            style={styles.wodllandwldexplorrBtn}>
-            <Text style={styles.wodllandwldexplorrBtnText}>Try Again</Text>
+            style={styles.thewlddsexpllorerBtn}>
+            <Text style={styles.thewlddsexpllorerBtnText}>Try Again</Text>
           </Pressable>
 
           <Pressable
             onPress={() =>
-              (wodllandwldexplorrNavigation as any).replace(
-                'Woodllandwldexplorrtab',
+              (thewlddsexpllorerNavigation as any).replace(
+                'Thewlddsexpllorertab',
                 {
-                  screen: 'Woodllandwldexplorrfacts',
+                  screen: 'Thewlddsexpllorerfacts',
                 },
               )
             }
-            style={styles.wodllandwldexplorrLink}>
-            <Text style={styles.wodllandwldexplorrLinkText}>Back to Facts</Text>
+            style={styles.thewlddsexpllorerLink}>
+            <Text style={styles.thewlddsexpllorerLinkText}>Back to Facts</Text>
           </Pressable>
         </View>
       </View>
-    </Woodllandwldexplorrlay>
+    </Thewlddsexpllorerlay>
   );
 };
 
-export default Woodllandwldexplorrfactsresult;
+export default Thewlddsexpllorerfactsresult;
 
 const styles = StyleSheet.create({
-  wodllandwldexplorrEmoji: {
+  thewlddsexpllorerEmoji: {
     fontSize: 58,
   },
 
-  wodllandwldexplorrTitle: {
+  thewlddsexpllorerTitle: {
     marginTop: 20,
     color: '#EDE8FF',
     fontSize: 22,
     fontWeight: '900',
   },
 
-  wodllandwldexplorrRoot: {
+  thewlddsexpllorerRoot: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 16,
   },
-  wodllandwldexplorrCard: {
+  thewlddsexpllorerCard: {
     width: '94%',
     borderRadius: 24,
     backgroundColor: '#1D1255',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  wodllandwldexplorrScorePill: {
+  thewlddsexpllorerScorePill: {
     marginTop: 16,
     flexDirection: 'row',
     alignItems: 'center',
@@ -98,12 +98,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#3828A0',
   },
-  wodllandwldexplorrScoreText: {
+  thewlddsexpllorerScoreText: {
     color: '#F5C800',
     fontSize: 15,
     fontWeight: '900',
   },
-  wodllandwldexplorrBtn: {
+  thewlddsexpllorerBtn: {
     marginTop: 16,
     height: 48,
     width: '100%',
@@ -112,16 +112,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  wodllandwldexplorrBtnText: {
+  thewlddsexpllorerBtnText: {
     color: '#120A38',
     fontSize: 14,
     fontWeight: '800',
   },
-  wodllandwldexplorrLink: {
+  thewlddsexpllorerLink: {
     marginTop: 15,
     paddingHorizontal: 30,
   },
-  wodllandwldexplorrLinkText: {
+  thewlddsexpllorerLinkText: {
     color: '#7B6CB0',
     fontSize: 14,
     fontWeight: '600',

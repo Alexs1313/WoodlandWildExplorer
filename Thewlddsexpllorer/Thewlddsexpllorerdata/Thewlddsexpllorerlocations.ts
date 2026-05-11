@@ -1,6 +1,6 @@
 import {ImageSourcePropType} from 'react-native';
 
-export type WoodllandwldexplorrLocation = {
+export type ThewlddsexpllorerLocation = {
   id: string;
   title: string;
   cityCountry: string;
@@ -10,7 +10,7 @@ export type WoodllandwldexplorrLocation = {
   image: ImageSourcePropType;
 };
 
-export const wodllandwldexplorrLocations: WoodllandwldexplorrLocation[] = [
+export const thewlddsexpllorerLocations: ThewlddsexpllorerLocation[] = [
   {
     id: 'donana',
     title: 'Doñana Biological Reserve',

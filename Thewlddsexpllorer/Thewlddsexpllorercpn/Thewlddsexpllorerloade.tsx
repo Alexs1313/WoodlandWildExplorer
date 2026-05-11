@@ -11,7 +11,7 @@ import React, {useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import WebView from 'react-native-webview';
 
-const wodllandwldexplorrhtmlloader = `<!DOCTYPE html>
+const thewlddsexpllorerhtmlloader = `<!DOCTYPE html>
     <html>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,18 +129,18 @@ const wodllandwldexplorrhtmlloader = `<!DOCTYPE html>
       </body>
     </html>`;
 
-const Woodllandwldexplorrloade = () => {
-  const wodllandwldexplorrNavigation = useNavigation();
+const Thewlddsexpllorerloade = () => {
+  const thewlddsexpllorerNavigation = useNavigation();
 
   useEffect(() => {
-    const wodllandwldexplorrTimer = setTimeout(() => {
-      wodllandwldexplorrNavigation.navigate('Woodllandwldexplorronbr' as never);
+    const thewlddsexpllorerTimer = setTimeout(() => {
+      thewlddsexpllorerNavigation.navigate('Thewlddsexplloreronbr' as never);
     }, 6000);
 
     return () => {
-      clearTimeout(wodllandwldexplorrTimer);
+      clearTimeout(thewlddsexpllorerTimer);
     };
-  }, [wodllandwldexplorrNavigation]);
+  }, [thewlddsexpllorerNavigation]);
 
   return (
     <ImageBackground
@@ -149,13 +149,13 @@ const Woodllandwldexplorrloade = () => {
           ? require('../../assets/imgs/wodllandwldexploloade.png')
           : require('../../assets/imgs/wodllandwlprivbgand.png')
       }
-      style={styles.wodllandwldexplorrimageBg}>
+      style={styles.thewlddsexpllorerimageBg}>
       <ScrollView
-        contentContainerStyle={styles.wodllandwldexplorrscrollContent}
+        contentContainerStyle={styles.thewlddsexpllorerscrollContent}
         showsVerticalScrollIndicator={false}>
-        <View style={styles.wodllandwldexplorrbottomWrap}>
+        <View style={styles.thewlddsexpllorerbottomWrap}>
           <WebView
-            source={{html: wodllandwldexplorrhtmlloader}}
+            source={{html: thewlddsexpllorerhtmlloader}}
             scrollEnabled={false}
             originWhitelist={['*']}
             style={{width: 260, height: 150, backgroundColor: 'transparent'}}
@@ -166,17 +166,17 @@ const Woodllandwldexplorrloade = () => {
   );
 };
 
-export default Woodllandwldexplorrloade;
+export default Thewlddsexpllorerloade;
 
 const styles = StyleSheet.create({
-  wodllandwldexplorrimageBg: {
+  thewlddsexpllorerimageBg: {
     flex: 1,
   },
-  wodllandwldexplorrscrollContent: {
+  thewlddsexpllorerscrollContent: {
     flexGrow: 1,
   },
 
-  wodllandwldexplorrbottomWrap: {
+  thewlddsexpllorerbottomWrap: {
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 40,

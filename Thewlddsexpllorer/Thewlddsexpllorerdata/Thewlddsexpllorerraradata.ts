@@ -1,17 +1,17 @@
 import type {ImageSourcePropType} from 'react-native';
 
-export type WoodllandwldexplorrRaraType =
+export type ThewlddsexpllorerRaraType =
   | 'animal'
   | 'bird'
   | 'amphibian'
   | 'plant';
 
-export type WoodllandwldexplorrRaraItem = {
+export type ThewlddsexpllorerRaraItem = {
   id: string;
   title: string;
   scientificName: string;
   status: string;
-  type: WoodllandwldexplorrRaraType;
+  type: ThewlddsexpllorerRaraType;
   habitat: string;
   population: string;
   threats: string;
@@ -20,7 +20,7 @@ export type WoodllandwldexplorrRaraItem = {
   image?: ImageSourcePropType;
 };
 
-export const wodllandwldexplorrRaraItems: WoodllandwldexplorrRaraItem[] = [
+export const thewlddsexpllorerRaraItems: ThewlddsexpllorerRaraItem[] = [
   {
     id: 'eurasian-lynx',
     title: 'Eurasian Lynx',
