@@ -4,17 +4,17 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
-      app_store_connect: NewLoganWoodsAPIKey
+      app_store_connect: NewWoodsAPIKey
     environment:
       xcode: '26.0'
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.hfiewwlldds.fhktk.kkdi
+        bundle_identifier: com.djnew.dmkgk.bkds
       vars:
-        BUNDLE_ID: com.hfiewwlldds.fhktk.kkdi
+        BUNDLE_ID: com.djnew.dmkgk.bkds
         XCODE_WORKSPACE: WoodlandWildExplorer.xcworkspace
         XCODE_SCHEME: WoodlandWildExplorer
-        APP_STORE_APPLE_ID: 6768277445
+        APP_STORE_APPLE_ID: 6768319891
     scripts:
       - name: Install npm dependencies
         script: |
