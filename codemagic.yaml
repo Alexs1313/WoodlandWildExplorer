@@ -1,20 +1,20 @@
 workflows:
   ios-workflow:
-    name: 'The Wild Explorer'
+    name: 'Wild Woodland Explorer'
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
-      app_store_connect: NewWoodsLoganAPIKey
+      app_store_connect: NewWoodlandAPIKey
     environment:
       xcode: '26.0'
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.skfth.wlsds.llvvb
+        bundle_identifier: com.ghssfiior.jgksla
       vars:
-        BUNDLE_ID: com.skfth.wlsds.llvvb
+        BUNDLE_ID: com.ghssfiior.jgksla
         XCODE_WORKSPACE: WoodlandWildExplorer.xcworkspace
         XCODE_SCHEME: WoodlandWildExplorer
-        APP_STORE_APPLE_ID: 6768955972
+        APP_STORE_APPLE_ID: 6769061198
     scripts:
       - name: Install npm dependencies
         script: |

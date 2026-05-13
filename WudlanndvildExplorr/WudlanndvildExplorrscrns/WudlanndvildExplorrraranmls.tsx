@@ -1,7 +1,7 @@
-import Thewlddsexpllorerlay from '../Thewlddsexpllorercpn/Thewlddsexpllorerlay';
-import Thewlddsexpllorersettmenu from '../Thewlddsexpllorercpn/Thewlddsexpllorersettmenu';
+import WudlanndvildExplorrlay from '../WudlanndvildExplorrcpn/WudlanndvildExplorrlay';
+import WudlanndvildExplorrsettmenu from '../WudlanndvildExplorrcpn/WudlanndvildExplorrsettmenu';
 
-import {thewlddsexpllorerRaraItems} from '../Thewlddsexpllorerdata/Thewlddsexpllorerraradata';
+import {wudlanndvildexplorrRaraItems} from '../WudlanndvildExplorrdata/WudlanndvildExplorrraradata';
 
 import React, {useMemo, useState} from 'react';
 import {
@@ -15,97 +15,97 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const Thewlddsexpllorerraranmls = () => {
-  const thewlddsexpllorerNavigation = useNavigation();
-  const [thewlddsexpllorerFilter, thewlddsexpllorerSetFilter] = useState<
+const WudlanndvildExplorrraranmls = () => {
+  const wudlanndvildexplorrNavigation = useNavigation();
+  const [wudlanndvildexplorrFilter, wudlanndvildexplorrSetFilter] = useState<
     'all' | 'animal' | 'plant'
   >('all');
 
-  const thewlddsexpllorerItems = useMemo(
-    () => thewlddsexpllorerRaraItems,
+  const wudlanndvildexplorrItems = useMemo(
+    () => wudlanndvildexplorrRaraItems,
     [],
   );
 
-  const thewlddsexpllorerFiltered = useMemo(() => {
-    if (thewlddsexpllorerFilter === 'all') {
-      return thewlddsexpllorerItems;
+  const wudlanndvildexplorrFiltered = useMemo(() => {
+    if (wudlanndvildexplorrFilter === 'all') {
+      return wudlanndvildexplorrItems;
     }
-    if (thewlddsexpllorerFilter === 'plant') {
-      return thewlddsexpllorerItems.filter(i => i.type === 'plant');
+    if (wudlanndvildexplorrFilter === 'plant') {
+      return wudlanndvildexplorrItems.filter(i => i.type === 'plant');
     }
-    return thewlddsexpllorerItems.filter(i => i.type !== 'plant');
-  }, [thewlddsexpllorerFilter, thewlddsexpllorerItems]);
+    return wudlanndvildexplorrItems.filter(i => i.type !== 'plant');
+  }, [wudlanndvildexplorrFilter, wudlanndvildexplorrItems]);
 
   return (
-    <Thewlddsexpllorerlay>
-      <View style={styles.thewlddsexpllorerRoot}>
-        <View style={styles.thewlddsexpllorerHeader}>
-          <View style={styles.thewlddsexpllorerHeaderLeft}>
-            <View style={styles.thewlddsexpllorerHeaderIconWrap}>
+    <WudlanndvildExplorrlay>
+      <View style={styles.wudlanndvildexplorrRoot}>
+        <View style={styles.wudlanndvildexplorrHeader}>
+          <View style={styles.wudlanndvildexplorrHeaderLeft}>
+            <View style={styles.wudlanndvildexplorrHeaderIconWrap}>
               <Image
                 source={require('../../assets/imgs/wodllandwllilsbook.png')}
               />
             </View>
             <View>
-              <Text style={styles.thewlddsexpllorerTitle}>
+              <Text style={styles.wudlanndvildexplorrTitle}>
                 Rare Animals & Plants
               </Text>
-              <Text style={styles.thewlddsexpllorerSubtitle}>
+              <Text style={styles.wudlanndvildexplorrSubtitle}>
                 Endangered Species
               </Text>
             </View>
           </View>
 
           {Platform.OS === 'ios' && (
-            <Thewlddsexpllorersettmenu thewlddsexpllorerAnchorTop={50} />
+            <WudlanndvildExplorrsettmenu wudlanndvildexplorrAnchorTop={50} />
           )}
         </View>
 
-        <View style={styles.thewlddsexpllorerTabs}>
+        <View style={styles.wudlanndvildexplorrTabs}>
           <Pressable
-            onPress={() => thewlddsexpllorerSetFilter('all')}
+            onPress={() => wudlanndvildexplorrSetFilter('all')}
             style={[
-              styles.thewlddsexpllorerTab,
-              thewlddsexpllorerFilter === 'all' &&
-                styles.thewlddsexpllorerTabActive,
+              styles.wudlanndvildexplorrTab,
+              wudlanndvildexplorrFilter === 'all' &&
+                styles.wudlanndvildexplorrTabActive,
             ]}>
             <Text
               style={[
-                styles.thewlddsexpllorerTabText,
-                thewlddsexpllorerFilter === 'all' &&
-                  styles.thewlddsexpllorerTabTextActive,
+                styles.wudlanndvildexplorrTabText,
+                wudlanndvildexplorrFilter === 'all' &&
+                  styles.wudlanndvildexplorrTabTextActive,
               ]}>
               All
             </Text>
           </Pressable>
           <Pressable
-            onPress={() => thewlddsexpllorerSetFilter('animal')}
+            onPress={() => wudlanndvildexplorrSetFilter('animal')}
             style={[
-              styles.thewlddsexpllorerTab,
-              thewlddsexpllorerFilter === 'animal' &&
-                styles.thewlddsexpllorerTabActive,
+              styles.wudlanndvildexplorrTab,
+              wudlanndvildexplorrFilter === 'animal' &&
+                styles.wudlanndvildexplorrTabActive,
             ]}>
             <Text
               style={[
-                styles.thewlddsexpllorerTabText,
-                thewlddsexpllorerFilter === 'animal' &&
-                  styles.thewlddsexpllorerTabTextActive,
+                styles.wudlanndvildexplorrTabText,
+                wudlanndvildexplorrFilter === 'animal' &&
+                  styles.wudlanndvildexplorrTabTextActive,
               ]}>
               Animal
             </Text>
           </Pressable>
           <Pressable
-            onPress={() => thewlddsexpllorerSetFilter('plant')}
+            onPress={() => wudlanndvildexplorrSetFilter('plant')}
             style={[
-              styles.thewlddsexpllorerTab,
-              thewlddsexpllorerFilter === 'plant' &&
-                styles.thewlddsexpllorerTabActive,
+              styles.wudlanndvildexplorrTab,
+              wudlanndvildexplorrFilter === 'plant' &&
+                styles.wudlanndvildexplorrTabActive,
             ]}>
             <Text
               style={[
-                styles.thewlddsexpllorerTabText,
-                thewlddsexpllorerFilter === 'plant' &&
-                  styles.thewlddsexpllorerTabTextActive,
+                styles.wudlanndvildexplorrTabText,
+                wudlanndvildexplorrFilter === 'plant' &&
+                  styles.wudlanndvildexplorrTabTextActive,
               ]}>
               Plant
             </Text>
@@ -113,43 +113,43 @@ const Thewlddsexpllorerraranmls = () => {
         </View>
 
         <FlatList
-          data={thewlddsexpllorerFiltered}
+          data={wudlanndvildexplorrFiltered}
           keyExtractor={item => item.id}
           scrollEnabled={false}
-          contentContainerStyle={styles.thewlddsexpllorerList}
+          contentContainerStyle={styles.wudlanndvildexplorrList}
           showsVerticalScrollIndicator={false}
           renderItem={({item}) => (
             <Pressable
               onPress={() =>
-                (thewlddsexpllorerNavigation as any).navigate(
-                  'Thewlddsexpllorerraradet',
+                (wudlanndvildexplorrNavigation as any).navigate(
+                  'WudlanndvildExplorrraradet',
                   {id: item.id},
                 )
               }
-              style={styles.thewlddsexpllorerCard}>
+              style={styles.wudlanndvildexplorrCard}>
               <Image
                 source={
                   item.image ??
                   require('../../assets/imgs/wodllandwllilok1.png')
                 }
-                style={styles.thewlddsexpllorerImage}
+                style={styles.wudlanndvildexplorrImage}
               />
 
-              <View style={styles.thewlddsexpllorerCardBody}>
-                <View style={styles.thewlddsexpllorerPillsRow}>
+              <View style={styles.wudlanndvildexplorrCardBody}>
+                <View style={styles.wudlanndvildexplorrPillsRow}>
                   <View
                     style={[
-                      styles.thewlddsexpllorerPill,
+                      styles.wudlanndvildexplorrPill,
                       /endangered/i.test(item.status)
-                        ? styles.thewlddsexpllorerPillDanger
-                        : styles.thewlddsexpllorerPillWarn,
+                        ? styles.wudlanndvildexplorrPillDanger
+                        : styles.wudlanndvildexplorrPillWarn,
                     ]}>
-                    <Text style={styles.thewlddsexpllorerPillText}>
+                    <Text style={styles.wudlanndvildexplorrPillText}>
                       {item.status}
                     </Text>
                   </View>
-                  <View style={styles.thewlddsexpllorerPillMuted}>
-                    <Text style={styles.thewlddsexpllorerPillMutedText}>
+                  <View style={styles.wudlanndvildexplorrPillMuted}>
+                    <Text style={styles.wudlanndvildexplorrPillMutedText}>
                       {item.type === 'plant'
                         ? 'Plant'
                         : item.type === 'bird'
@@ -161,22 +161,22 @@ const Thewlddsexpllorerraranmls = () => {
                   </View>
                 </View>
 
-                <Text style={styles.thewlddsexpllorerCardTitle}>
+                <Text style={styles.wudlanndvildexplorrCardTitle}>
                   {item.title}
                 </Text>
-                <Text style={styles.thewlddsexpllorerCardLatin}>
+                <Text style={styles.wudlanndvildexplorrCardLatin}>
                   {item.scientificName}
                 </Text>
 
-                <View style={styles.thewlddsexpllorerHabitatRow}>
-                  <Text style={styles.thewlddsexpllorerWarnIcon}>⚠︎</Text>
-                  <Text style={styles.thewlddsexpllorerHabitatText}>
+                <View style={styles.wudlanndvildexplorrHabitatRow}>
+                  <Text style={styles.wudlanndvildexplorrWarnIcon}>⚠︎</Text>
+                  <Text style={styles.wudlanndvildexplorrHabitatText}>
                     {item.habitat.split(',')[0]}
                   </Text>
                 </View>
               </View>
 
-              <View style={styles.thewlddsexpllorerChevron}>
+              <View style={styles.wudlanndvildexplorrChevron}>
                 <Image
                   source={require('../../assets/imgs/wodllandwllilspnx.png')}
                 />
@@ -185,14 +185,14 @@ const Thewlddsexpllorerraranmls = () => {
           )}
         />
       </View>
-    </Thewlddsexpllorerlay>
+    </WudlanndvildExplorrlay>
   );
 };
 
-export default Thewlddsexpllorerraranmls;
+export default WudlanndvildExplorrraranmls;
 
 const styles = StyleSheet.create({
-  thewlddsexpllorerPillsRow: {
+  wudlanndvildexplorrPillsRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
@@ -200,33 +200,33 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
 
-  thewlddsexpllorerPill: {
+  wudlanndvildexplorrPill: {
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 999,
   },
-  thewlddsexpllorerPillWarn: {
+  wudlanndvildexplorrPillWarn: {
     backgroundColor: '#F0B840',
   },
-  thewlddsexpllorerPillDanger: {
+  wudlanndvildexplorrPillDanger: {
     backgroundColor: '#FF4D4D',
   },
 
-  thewlddsexpllorerRoot: {
+  wudlanndvildexplorrRoot: {
     paddingTop: 60,
     paddingHorizontal: 16,
   },
-  thewlddsexpllorerHeader: {
+  wudlanndvildexplorrHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  thewlddsexpllorerHeaderLeft: {
+  wudlanndvildexplorrHeaderLeft: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
   },
-  thewlddsexpllorerHeaderIconWrap: {
+  wudlanndvildexplorrHeaderIconWrap: {
     width: 34,
     height: 34,
     borderRadius: 12,
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#4C2AA6',
   },
-  thewlddsexpllorerHeaderBtn: {
+  wudlanndvildexplorrHeaderBtn: {
     width: 44,
     height: 44,
     borderRadius: 14,
@@ -246,24 +246,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  thewlddsexpllorerTitle: {
+  wudlanndvildexplorrTitle: {
     color: '#EDE8FF',
     fontSize: 18,
     fontWeight: '800',
   },
-  thewlddsexpllorerSubtitle: {
+  wudlanndvildexplorrSubtitle: {
     color: '#A090CC',
     marginTop: 4,
     fontSize: 12,
     fontWeight: '600',
   },
-  thewlddsexpllorerTabs: {
+  wudlanndvildexplorrTabs: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
     marginTop: 14,
   },
-  thewlddsexpllorerTab: {
+  wudlanndvildexplorrTab: {
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderRadius: 999,
@@ -271,24 +271,24 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#3828A0',
   },
-  thewlddsexpllorerTabActive: {
+  wudlanndvildexplorrTabActive: {
     backgroundColor: '#9B5CF6',
     borderColor: '#9B5CF6',
   },
-  thewlddsexpllorerTabText: {
+  wudlanndvildexplorrTabText: {
     color: '#A090CC',
     fontSize: 12,
     fontWeight: '800',
   },
-  thewlddsexpllorerTabTextActive: {
+  wudlanndvildexplorrTabTextActive: {
     color: '#120A38',
   },
-  thewlddsexpllorerList: {
+  wudlanndvildexplorrList: {
     paddingTop: 14,
     paddingBottom: 120,
     gap: 12,
   },
-  thewlddsexpllorerCard: {
+  wudlanndvildexplorrCard: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#1D1255',
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     overflow: 'hidden',
   },
-  thewlddsexpllorerImageWrap: {
+  wudlanndvildexplorrImageWrap: {
     width: 110,
     height: 100,
     borderTopLeftRadius: 18,
@@ -305,65 +305,65 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor: '#140B3B',
   },
-  thewlddsexpllorerImage: {
+  wudlanndvildexplorrImage: {
     width: 120,
     height: '100%',
     resizeMode: 'cover',
   },
-  thewlddsexpllorerCardBody: {
+  wudlanndvildexplorrCardBody: {
     flex: 1,
     padding: 12,
   },
 
-  thewlddsexpllorerPillText: {
+  wudlanndvildexplorrPillText: {
     color: '#fff',
     fontSize: 11,
     fontWeight: '800',
   },
-  thewlddsexpllorerPillMuted: {
+  wudlanndvildexplorrPillMuted: {
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 999,
     backgroundColor: '#281C68',
   },
-  thewlddsexpllorerPillMutedText: {
+  wudlanndvildexplorrPillMutedText: {
     color: '#A090CC',
     fontSize: 11,
     fontWeight: '700',
   },
-  thewlddsexpllorerCardTitle: {
+  wudlanndvildexplorrCardTitle: {
     color: '#EDE8FF',
     fontSize: 14,
     fontWeight: '700',
   },
-  thewlddsexpllorerCardLatin: {
+  wudlanndvildexplorrCardLatin: {
     marginTop: 4,
     color: '#A090CC',
     fontSize: 12,
     fontWeight: '600',
   },
-  thewlddsexpllorerHabitatRow: {
+  wudlanndvildexplorrHabitatRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
     marginTop: 8,
   },
-  thewlddsexpllorerWarnIcon: {
+  wudlanndvildexplorrWarnIcon: {
     color: '#C8922A',
     fontSize: 12,
     fontWeight: '900',
   },
-  thewlddsexpllorerHabitatText: {
+  wudlanndvildexplorrHabitatText: {
     color: '#C8922A',
     fontSize: 11,
     fontWeight: '500',
   },
-  thewlddsexpllorerChevron: {
+  wudlanndvildexplorrChevron: {
     width: 26,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  thewlddsexpllorerChevronText: {
+  wudlanndvildexplorrChevronText: {
     color: '#F5C800',
     fontSize: 24,
     fontWeight: '900',
